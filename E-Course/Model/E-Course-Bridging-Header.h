@@ -3,3 +3,6 @@
 //
 
 
+#import <Parse/Parse.h>
+#import "User.h"
+#import "iCarousel.h"

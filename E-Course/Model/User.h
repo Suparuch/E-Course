@@ -27,10 +27,6 @@
 + (void) resetPassword:(NSString *)email;
 + (void) newEmail:(NSString *)email changePassword:(NSString *)password reTypePassword:(NSString *)retype withDelegate:(id<UserDelegate>)delegate;
 + (void) currentPassword:(NSString *)current changePassword:(NSString *)password retype:(NSString *)retype withDelegate:(id<UserDelegate>)delegate;
-+ (NSArray *) getClubRequert;
-+ (void) approveClub:(NSString *)addClub;
-+ (NSArray *) getUserRequertBook;
-+ (void) approveUserBook:(NSString *)bookId;
-+ (void) disApproveUserBook:(NSString *)bookId;
+
 
 @end

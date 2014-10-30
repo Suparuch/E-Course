@@ -7,18 +7,56 @@
 //
 
 import UIKit
-import Parse
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var loginView: LoginViewController?
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Parse.setApplicationId("BcbeKWhYAXHFKfQkjMpOmNG24Gnx6VzgcWoejsyj", clientKey: "X693ZV6uIfDSUPwpnfpGXLTuZNl3CDX1Y3fvOBNM")
-      //  PFAnalytics.tra
+        /*
+        let tabBarController = UITabBarController()
+        let tabNews = NewsViewController(nibName: "News", bundle: nil)
+        let tabCourse = CourseViewController(nibName: "Course", bundle: nil)
+        let controllers = [tabNews,tabCourse]
+        tabBarController.viewControllers = controllers
+        window?.rootViewController = tabBarController
+        let firstImage = UIImage(named: "pie bar icon")
+        let secondImage = UIImage(named: "pizza bar icon")
+        tabNews.tabBarItem = UITabBarItem(title: "News", image: firstImage, tag: 1)
+        tabCourse.tabBarItem = UITabBarItem(title: "Course", image: secondImage, tag:2)
+        
+        loginView = LoginViewController(nibName: "NewsViewController", bundle: nil)
+        */
+        //self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        //self.window!.rootViewController = self.loginView
+        //self.window!.makeKeyAndVisible()
+       
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let tabBarController = UITabBarController()
+        let newView = NewsViewController(nibName: "NewsViewController", bundle: nil)
+        let courseView = CourseViewController(nibName: "CourseViewController", bundle: nil)
+        let mycourseView = MycourseViewController(nibName: "MycourseViewController", bundle: nil)
+        let resultView = ResultViewController(nibName: "ResultViewController", bundle: nil)
+        let settingView = SettingViewController(nibName: "SettingViewController", bundle: nil)
+        let controllers = [newView,courseView,mycourseView,resultView,settingView]
+        tabBarController.viewControllers = controllers
+        window?.rootViewController = tabBarController
+       // let firstImage = UIImage(named: "News")
+       // let secondImage = UIImage(named: "pizza bar icon")
+        newView.tabBarItem = UITabBarItem(title: "News", image: nil, tag: 1)
+        courseView.tabBarItem = UITabBarItem(title: "Course", image: nil, tag:2)
+        mycourseView.tabBarItem = UITabBarItem(title: "MyCourse", image: nil, tag:3)
+        resultView.tabBarItem = UITabBarItem(title: "Result", image: nil, tag:4)
+        settingView.tabBarItem = UITabBarItem(title: "Setting", image: nil, tag:5)
+        self.window!.makeKeyAndVisible()
         return true
     }
 
